@@ -34,14 +34,14 @@ import "assets/vendor/nucleo/css/nucleo.css";
 import "assets/scss/argon-dashboard-pro-react.scss?v1.2.0";
 
 // import AdminLayout from "layouts/Admin.js";
-import AuthLayout from "layouts/Auth.js";
+import Auth from "layouts/Auth.js";
 import IndexView from "views/Index.js";
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
       {/* <Route path="/admin" render={(props) => <AdminLayout {...props} />} /> */}
-      <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
+      <Route path="/auth" render={(props) => <Auth {...props} />} />
       <Route path="/" render={(props) => <IndexView {...props} />} />
       <Redirect from="*" to="/" />
     </Switch>
