@@ -16,11 +16,10 @@
 */
 import React from "react";
 
-
 function CalendarView() {
-  return
-  <>
-  <p>asfdsafasd</p>
+  return (
+    <>
+      <p>asfdsafasd</p>
     </>
   );
 }
