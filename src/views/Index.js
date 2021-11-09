@@ -41,15 +41,15 @@ import IndexNavbar from "../components/Navbars/IndexNavbar.js";
 import IndexHeader from "../components/Headers/IndexHeader.js";
 import AuthFooter from "../components/Footers/AuthFooter.js";
 
-const cetraliseImage = require("assets/img/girl-2.webp").default;
-const oportunitiesImage = require("assets/img/girl-1.webp").default;
-const expandImage = require("assets/img/group-final.webp").default;
-const shoesImage = require("assets/img/sneakers.webp").default;
+const cetraliseImage = require("../assets/img/girl-2.webp").default;
+const oportunitiesImage = require("../assets/img/girl-1.webp").default;
+const expandImage = require("../assets/img/group-final.webp").default;
+const shoesImage = require("../assets/img/sneakers.webp").default;
 const customProducts =
-  require("assets/img/merchi-custom-products.webp").default;
-const logistics = require("assets/img/merchi-logistics.webp").default;
-const scale = require("assets/img/merchi-scale.webp").default;
-const phone = require("assets/img/merchi-support.png").default;
+  require("../assets/img/merchi-custom-products.webp").default;
+const logistics = require("../assets/img/merchi-logistics.webp").default;
+const scale = require("../assets/img/merchi-scale.webp").default;
+const phone = require("../assets/img/merchi-support.png").default;
 
 const MAP_CENTER = { lat: -37.8, lng: 145, altitude: 4 };
 
