@@ -17,13 +17,6 @@
 import React from "react";
 // node.js library that concatenates classes (strings)
 
-import {
-  chartOptions,
-  parseOptions,
-  chartExample1,
-  chartExample2,
-} from "variables/charts.js";
-
 function Dashboard() {
   return <p>"adsfsafsa"</p>;
 }
