@@ -47,7 +47,7 @@ import {
   Col,
 } from "reactstrap";
 // core components
-import CardsHeader from "components/Headers/CardsHeader.js";
+import CardsHeader from "../../components/Headers/CardsHeader.js";
 
 import { widgetEvents } from "variables/general.js";
 

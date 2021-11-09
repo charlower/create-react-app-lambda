@@ -37,9 +37,9 @@ import * as d3 from "d3-dsv";
 import indexBy from "index-array-by";
 
 // core components
-import IndexNavbar from "components/Navbars/IndexNavbar.js";
-import IndexHeader from "components/Headers/IndexHeader.js";
-import AuthFooter from "components/Footers/AuthFooter.js";
+import IndexNavbar from "../components/Navbars/IndexNavbar.js";
+import IndexHeader from "../components/Headers/IndexHeader.js";
+import AuthFooter from "../components/Footers/AuthFooter.js";
 
 const cetraliseImage = require("assets/img/girl-2.webp").default;
 const oportunitiesImage = require("assets/img/girl-1.webp").default;
