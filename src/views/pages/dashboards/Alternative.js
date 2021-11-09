@@ -59,11 +59,6 @@ let mapData = {
 };
 
 function Alternative() {
-  React.useEffect(() => {
-    if (window.Chart) {
-      parseOptions(Chart, chartOptions());
-    }
-  }, []);
   return (
     <>
       <p>asdfsafsaf</p>
