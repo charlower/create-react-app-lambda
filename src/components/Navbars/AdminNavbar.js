@@ -158,7 +158,10 @@ function AdminNavbar({ theme, sidenavOpen, toggleSidenav }) {
                           <img
                             alt="..."
                             className="avatar rounded-circle"
-                            src={require("assets/img/theme/team-1.jpg").default}
+                            src={
+                              require("../../assets/img/theme/team-1.jpg")
+                                .default
+                            }
                           />
                         </Col>
                         <div className="col ml--2">
@@ -187,7 +190,10 @@ function AdminNavbar({ theme, sidenavOpen, toggleSidenav }) {
                           <img
                             alt="..."
                             className="avatar rounded-circle"
-                            src={require("assets/img/theme/team-2.jpg").default}
+                            src={
+                              require("../../assets/img/theme/team-2.jpg")
+                                .default
+                            }
                           />
                         </Col>
                         <div className="col ml--2">
@@ -216,7 +222,10 @@ function AdminNavbar({ theme, sidenavOpen, toggleSidenav }) {
                           <img
                             alt="..."
                             className="avatar rounded-circle"
-                            src={require("assets/img/theme/team-3.jpg").default}
+                            src={
+                              require("../../assets/img/theme/team-3.jpg")
+                                .default
+                            }
                           />
                         </Col>
                         <div className="col ml--2">
@@ -245,7 +254,10 @@ function AdminNavbar({ theme, sidenavOpen, toggleSidenav }) {
                           <img
                             alt="..."
                             className="avatar rounded-circle"
-                            src={require("assets/img/theme/team-4.jpg").default}
+                            src={
+                              require("../../assets/img/theme/team-4.jpg")
+                                .default
+                            }
                           />
                         </Col>
                         <div className="col ml--2">
@@ -274,7 +286,10 @@ function AdminNavbar({ theme, sidenavOpen, toggleSidenav }) {
                           <img
                             alt="..."
                             className="avatar rounded-circle"
-                            src={require("assets/img/theme/team-5.jpg").default}
+                            src={
+                              require("../../assets/img/theme/team-5.jpg")
+                                .default
+                            }
                           />
                         </Col>
                         <div className="col ml--2">
@@ -395,7 +410,9 @@ function AdminNavbar({ theme, sidenavOpen, toggleSidenav }) {
                     <span className="avatar avatar-sm rounded-circle">
                       <img
                         alt="..."
-                        src={require("assets/img/theme/team-4.jpg").default}
+                        src={
+                          require("../../assets/img/theme/team-4.jpg").default
+                        }
                       />
                     </span>
                     <Media className="ml-2 d-none d-lg-block">

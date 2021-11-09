@@ -19,8 +19,8 @@
 // reactstrap components
 import { NavItem, NavLink, Nav, Container, Row, Col } from "reactstrap";
 
-const merchiLogo = require("assets/img/merchi-logo-colour.svg").default;
-const merchiLine = require("assets/img/merchi-swipe-outline.png").default;
+const merchiLogo = require("../../assets/img/merchi-logo-colour.svg").default;
+const merchiLine = require("../../assets/img/merchi-swipe-outline.png").default;
 
 function AuthFooter() {
   return (

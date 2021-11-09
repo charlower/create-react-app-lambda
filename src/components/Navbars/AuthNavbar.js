@@ -41,7 +41,10 @@ function AdminNavbar() {
       >
         <Container>
           <NavbarBrand to="/" tag={Link}>
-            <img alt="..." src={require("assets/img/black-fill.png").default} />
+            <img
+              alt="..."
+              src={require("../../assets/img/black-fill.png").default}
+            />
           </NavbarBrand>
           <button
             aria-controls="navbar-collapse"
@@ -66,7 +69,7 @@ function AdminNavbar() {
                   <Link to="/admin/dashboard">
                     <img
                       alt="..."
-                      src={require("assets/img/brand/blue.png").default}
+                      src={require("../../assets/img/brand/blue.png").default}
                     />
                   </Link>
                 </Col>

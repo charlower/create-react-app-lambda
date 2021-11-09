@@ -20,18 +20,7 @@ import { Button, Container, Row, Col } from "reactstrap";
 function ProfileHeader() {
   return (
     <>
-      <div
-        className="header pb-6 d-flex align-items-center"
-        style={{
-          minHeight: "500px",
-          backgroundImage:
-            'url("' +
-            require("assets/img/theme/profile-cover.jpg").default +
-            '")',
-          backgroundSize: "cover",
-          backgroundPosition: "center top",
-        }}
-      >
+      <div>
         <span className="mask bg-gradient-info opacity-8" />
 
         <Container className="d-flex align-items-center" fluid>
