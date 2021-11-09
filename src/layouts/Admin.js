@@ -24,7 +24,7 @@ import Sidebar from "components/Sidebar/Sidebar.js";
 
 import routes from "routes.js";
 
-function Admin() {
+function AdminLayout() {
   const [sidenavOpen, setSidenavOpen] = React.useState(true);
   const location = useLocation();
   const mainContentRef = React.useRef(null);
@@ -108,4 +108,4 @@ function Admin() {
   );
 }
 
-export default Admin;
+export default AdminLayout;
