@@ -29,7 +29,7 @@ import "select2/dist/css/select2.min.css";
 import "quill/dist/quill.core.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 // plugins styles downloaded
-// import "assets/vendor/nucleo/css/nucleo.css";
+import "assets/vendor/nucleo/css/nucleo.css";
 // core styles
 // import "assets/scss/argon-dashboard-pro-react.scss?v1.2.0";
 
