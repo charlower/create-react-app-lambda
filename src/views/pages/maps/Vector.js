@@ -20,7 +20,6 @@ import { VectorMap } from "react-jvectormap";
 // reactstrap components
 import { Card, CardBody, Container, Row } from "reactstrap";
 // core components
-import SimpleHeader from "components/Headers/SimpleHeader.js";
 
 let mapData = {
   AU: 760,
@@ -39,7 +38,6 @@ let mapData = {
 function Vector() {
   return (
     <>
-      <SimpleHeader name="Vector maps" parentName="Maps" />
       <Container className="mt--6" fluid>
         <Row>
           <div className="col">

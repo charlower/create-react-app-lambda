@@ -27,12 +27,10 @@ import {
   Col,
 } from "reactstrap";
 // core components
-import AuthHeader from "components/Headers/AuthHeader.js";
 
 function Pricing() {
   return (
     <>
-      <AuthHeader title="Choose the best plan for your business" lead="" />
       <Container className="mt--8 pb-5">
         <Row className="justify-content-center">
           <Col lg="10">

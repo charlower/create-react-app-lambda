@@ -34,7 +34,6 @@ import {
   Col,
 } from "reactstrap";
 // core components
-import SimpleHeader from "components/Headers/SimpleHeader.js";
 
 function Validation() {
   const [focused, setFocused] = React.useState(false);
@@ -91,7 +90,6 @@ function Validation() {
   };
   return (
     <>
-      <SimpleHeader name="Form validation" parentName="Forms" />
       <Container className="mt--6" fluid>
         <Row>
           <div className="col">

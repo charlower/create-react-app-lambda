@@ -26,12 +26,10 @@ import {
   Col,
 } from "reactstrap";
 // core components
-import SimpleHeader from "components/Headers/SimpleHeader.js";
 
 function Buttons() {
   return (
     <>
-      <SimpleHeader name="Buttons" parentName="Components" />
       <Container className="mt--6" fluid>
         <Row className="justify-content-center">
           <Col className="card-wrapper ct-example" lg="8">

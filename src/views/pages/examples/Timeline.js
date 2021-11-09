@@ -25,12 +25,10 @@ import {
   Col,
 } from "reactstrap";
 // core components
-import SimpleHeader from "components/Headers/SimpleHeader.js";
 
 function Timeline() {
   return (
     <>
-      <SimpleHeader name="Timeline" parentName="Pages" />
       <Container className="mt--6" fluid>
         <Row>
           <Col lg="6">

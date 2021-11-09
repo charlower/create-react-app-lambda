@@ -28,13 +28,11 @@ import {
   UncontrolledTooltip,
 } from "reactstrap";
 // core components
-import SimpleHeader from "components/Headers/SimpleHeader.js";
 
 function Icons() {
   const [copiedText, setCopiedText] = React.useState(null);
   return (
     <>
-      <SimpleHeader name="Icons" parentName="Components" />
       <Container className="mt--6" fluid>
         <Row className="justify-content-center">
           <Col lg="8">
