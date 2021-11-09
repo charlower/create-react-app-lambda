@@ -19,7 +19,8 @@ import { Link } from "react-router-dom";
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
 
-const backgroundImage = require("../assets/img/stickers-cropped.webp").default;
+const backgroundImage =
+  require("../../assets/img/stickers-cropped.webp").default;
 
 console.log(backgroundImage);
 
