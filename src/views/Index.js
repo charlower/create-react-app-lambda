@@ -198,7 +198,7 @@ function Index() {
       setRoutes(filteredRoutes);
       globeEl.current.controls().enableZoom = false;
       globeEl.current.pointOfView(MAP_CENTER, 2000);
-      console.log(globeEl);
+      // console.log(globeEl);
     });
   }, []);
 
