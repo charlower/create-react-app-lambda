@@ -20,9 +20,7 @@ import { Link } from "react-router-dom";
 import { Button, Container, Row, Col } from "reactstrap";
 
 const backgroundImage =
-  require("../../assets/img/stickers-cropped.webp").default;
-
-console.log(backgroundImage);
+  require("../../assets/img/stickers-cropped.png").default;
 
 function IndexHeader() {
   return (
