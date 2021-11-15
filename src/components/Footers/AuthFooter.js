@@ -72,7 +72,7 @@ function AuthFooter() {
           </Row>
           <div style={{ borderBottom: "1px solid rgb(227, 228, 247)" }}></div>
           <div style={{ borderTop: "1px solid rgb(255, 255, 255)" }}></div>
-          <Row className="mt-6">
+          <Row className="mt-6 d-none d-sm-flex">
             <Col sm="3">
               <h3>Company</h3>
               <ul style={{ padding: 0, listStyle: "none" }}>
@@ -105,6 +105,46 @@ function AuthFooter() {
                   height: "100%",
                   width: "100%",
                   minHeight: 100,
+                }}
+              />
+            </Col>
+          </Row>
+          <Row className="mt-6 d-sm-none">
+            <Col className="text-center" sm="3">
+              <h3>Company</h3>
+              <ul style={{ padding: 0, listStyle: "none" }}>
+                <li>About</li>
+                <li>Media</li>
+                <li>Contact</li>
+              </ul>
+            </Col>
+            <Col className="text-center" sm="3">
+              <h3>Resources</h3>
+              <ul style={{ padding: 0, listStyle: "none" }}>
+                <li>Developer docs</li>
+                <li>Security</li>
+                <li>Pricing</li>
+              </ul>
+            </Col>
+            <Col className="text-center" sm="3">
+              <h3>Links</h3>
+              <ul style={{ padding: 0, listStyle: "none" }}>
+                <li>Login</li>
+                <li>Github</li>
+              </ul>
+            </Col>
+            <Col sm="3">
+              <div
+                className="mt-3"
+                style={{
+                  backgroundImage: `url(${merchiLine})`,
+                  backgroundSize: "contain",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                  height: "100%",
+                  width: "100%",
+                  minHeight: 100,
+                  margin: "auto",
                 }}
               />
             </Col>

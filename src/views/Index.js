@@ -138,16 +138,16 @@ function Index() {
     }
   };
 
-  useLayoutEffect(() => {
-    const handleScroll = () => {
-      // console.log("rect top", rect.top, "rect bottom", rect.bottom);
-      // console.log("window height:", window.innerHeight);
-      isInViewport(globeContainer, globeEl);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () =>
-      window.removeEventListener("scroll", handleScroll, { passive: true });
-  }, [animate]);
+  // useLayoutEffect(() => {
+  //   const handleScroll = () => {
+  //     // console.log("rect top", rect.top, "rect bottom", rect.bottom);
+  //     // console.log("window height:", window.innerHeight);
+  //     isInViewport(globeContainer, globeEl);
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () =>
+  //     window.removeEventListener("scroll", handleScroll, { passive: true });
+  // }, [animate]);
 
   useEffect(() => {
     // load data
@@ -185,6 +185,7 @@ function Index() {
         ); // international routes from country
       setRoutes(filteredRoutes);
       globeEl.current.controls().enableZoom = false;
+      globeEl.current.pointOfView(MAP_CENTER, 2000);
       console.log(globeEl);
     });
   }, []);
@@ -543,7 +544,7 @@ function Index() {
                     globeMaterial={globeMaterial}
                     arcsData={routes}
                     backgroundColor="rgba(248, 249, 254, 0)"
-                    animateIn={false}
+                    animateIn={true}
                     showAtmosphere={false}
                     polygonAltitude={0.005}
                     polygonsData={landPolygons}
