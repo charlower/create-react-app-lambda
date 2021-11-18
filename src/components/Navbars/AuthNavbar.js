@@ -97,12 +97,12 @@ function AdminNavbar() {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/auth/login" tag={Link}>
+                <NavLink to="/auth/sellers" tag={Link}>
                   <span className="nav-link-inner--text">Sellers</span>
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/auth/suppliers" tag={Link}>
+                <NavLink to="/" tag={Link}>
                   <span className="nav-link-inner--text">Suppliers</span>
                 </NavLink>
               </NavItem>
