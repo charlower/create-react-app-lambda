@@ -40,7 +40,7 @@ import Typography from "./views/pages/components/Typography.js";
 import Validation from "./views/pages/forms/Validation.js";
 import Vector from "./views/pages/maps/Vector.js";
 import Widgets from "./views/pages/Widgets.js";
-import suppliers from "./views/pages/Suppliers.js";
+import Sellers from "./views/pages/Sellers.js";
 
 const routes = [
   {
@@ -62,13 +62,6 @@ const routes = [
         miniName: "A",
         component: Alternative,
         layout: "/admin",
-      },
-      {
-        path: "/suppliers",
-        name: "Suppliers",
-        miniName: "S",
-        component: suppliers,
-        layout: "/auth",
       },
     ],
   },
@@ -305,6 +298,13 @@ const routes = [
     icon: "ni ni-calendar-grid-58 text-red",
     component: Calendar,
     layout: "/admin",
+  },
+  {
+    path: "/sellers",
+    name: "Sellers",
+    icon: "ni ni-calendar-grid-58 text-red",
+    component: Sellers,
+    layout: "/auth",
   },
 ];
 
