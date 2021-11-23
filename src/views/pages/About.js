@@ -38,7 +38,7 @@ import indexBy from "index-array-by";
 
 // core components
 import IndexNavbar from "../../components/Navbars/IndexNavbar.js";
-import SellerHeader from "../../components/Headers/SellerHeader.js";
+import AboutHeader from "../../components/Headers/AboutHeader.js";
 import AuthFooter from "../../components/Footers/AuthFooter.js";
 
 const cetraliseImage = require("../../assets/img/girl-2.png").default;
@@ -111,7 +111,7 @@ const landPolygons = topojson.feature(
   landJson.default.objects.land
 ).features;
 
-function Sellers() {
+function About() {
   const globeEl = useRef();
   const globeContainer = useRef();
 
@@ -215,7 +215,7 @@ function Sellers() {
   return (
     <>
       <div className="main-content" style={{ overflowX: "hidden" }}>
-        <SellerHeader />
+        <AboutHeader />
         <section className="py-3">
           <Container>
             <Row>
@@ -1396,4 +1396,4 @@ function Sellers() {
   );
 }
 
-export default Sellers;
+export default About;

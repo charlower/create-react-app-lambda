@@ -76,7 +76,9 @@ function AuthFooter() {
             <Col sm="3">
               <h3>Company</h3>
               <ul style={{ padding: 0, listStyle: "none" }}>
-                <li>About</li>
+                <li>
+                  <a href="/auth/about">About</a>
+                </li>
                 <li>Media</li>
                 <li>Contact</li>
               </ul>
@@ -113,7 +115,9 @@ function AuthFooter() {
             <Col className="text-center" sm="3">
               <h3>Company</h3>
               <ul style={{ padding: 0, listStyle: "none" }}>
-                <li>About</li>
+                <li>
+                  <a href="/auth/about">About</a>
+                </li>
                 <li>Media</li>
                 <li>Contact</li>
               </ul>

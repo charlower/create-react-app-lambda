@@ -41,6 +41,7 @@ import Validation from "./views/pages/forms/Validation.js";
 import Vector from "./views/pages/maps/Vector.js";
 import Widgets from "./views/pages/Widgets.js";
 import Sellers from "./views/pages/Sellers.js";
+import About from "./views/pages/About.js";
 
 const routes = [
   {
@@ -304,6 +305,13 @@ const routes = [
     name: "Sellers",
     icon: "ni ni-calendar-grid-58 text-red",
     component: Sellers,
+    layout: "/auth",
+  },
+  {
+    path: "/about",
+    name: "About",
+    icon: "ni ni-calendar-grid-58 text-red",
+    component: About,
     layout: "/auth",
   },
 ];
