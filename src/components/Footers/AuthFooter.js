@@ -18,6 +18,7 @@
 
 // reactstrap components
 import { NavItem, NavLink, Nav, Container, Row, Col } from "reactstrap";
+import { Link } from "react-router-dom";
 
 const merchiLogo = require("../../assets/img/merchi-logo-colour.svg").default;
 const merchiLine = require("../../assets/img/merchi-swipe-outline.png").default;
@@ -77,7 +78,9 @@ function AuthFooter() {
               <h3>Company</h3>
               <ul style={{ padding: 0, listStyle: "none" }}>
                 <li>
-                  <a href="/auth/about">About</a>
+                  <NavLink style={{ padding: 0 }} to="/auth/about" tag={Link}>
+                    <span className="nav-link-inner--text">About</span>
+                  </NavLink>
                 </li>
                 <li>Media</li>
                 <li>Contact</li>
@@ -116,7 +119,9 @@ function AuthFooter() {
               <h3>Company</h3>
               <ul style={{ padding: 0, listStyle: "none" }}>
                 <li>
-                  <a href="/auth/about">About</a>
+                  <NavLink style={{ padding: 0 }} to="/auth/about" tag={Link}>
+                    <span className="nav-link-inner--text">About</span>
+                  </NavLink>
                 </li>
                 <li>Media</li>
                 <li>Contact</li>
