@@ -27,246 +27,81 @@ import {
   Col,
   UncontrolledTooltip,
 } from "reactstrap";
-import Globe from "react-globe.gl";
-import * as topojson from "topojson-client";
-import * as THREE from "three";
-import * as landJson from "../../assets/land-110m.json";
-import airportData from "../../assets/airports.dat";
-import routeData from "../../assets/routes.dat";
-import * as d3 from "d3-dsv";
-import indexBy from "index-array-by";
 
 // core components
-import IndexNavbar from "../../components/Navbars/IndexNavbar.js";
 import AboutHeader from "../../components/Headers/AboutHeader.js";
-import AuthFooter from "../../components/Footers/AuthFooter.js";
 
-const cetraliseImage = require("../../assets/img/girl-2.png").default;
-const oportunitiesImage = require("../../assets/img/girl-1.png").default;
-const expandImage = require("../../assets/img/group-final.png").default;
 const shoesImage = require("../../assets/img/sneakers.png").default;
 const customProducts =
-  require("../../assets/img/merchi-custom-products.png").default;
+  require("../../assets/img/print-embroid-about.png").default;
 const logistics = require("../../assets/img/merchi-logistics.png").default;
 const scale = require("../../assets/img/merchi-scale.png").default;
 const phone = require("../../assets/img/merchi-support.png").default;
-
-const MAP_CENTER = { lat: -37.8, lng: 145, altitude: 4 };
-
-const airportParse = ([
-  airportId,
-  name,
-  city,
-  country,
-  iata,
-  icao,
-  lat,
-  lng,
-  alt,
-  timezone,
-  dst,
-  tz,
-  type,
-  source,
-]) => ({
-  airportId,
-  name,
-  city,
-  country,
-  iata,
-  icao,
-  lat,
-  lng,
-  alt,
-  timezone,
-  dst,
-  tz,
-  type,
-  source,
-});
-const routeParse = ([
-  airline,
-  airlineId,
-  srcIata,
-  srcAirportId,
-  dstIata,
-  dstAirportId,
-  codeshare,
-  stops,
-  equipment,
-]) => ({
-  airline,
-  airlineId,
-  srcIata,
-  srcAirportId,
-  dstIata,
-  dstAirportId,
-  codeshare,
-  stops,
-  equipment,
-});
-
-const landPolygons = topojson.feature(
-  landJson.default,
-  landJson.default.objects.land
-).features;
+const skateboard = require("../../assets/img/merchi-skateboard.png").default;
+const frog = require("../../assets/img/merchi-frog.jpg").default;
+const lips = require("../../assets/img/merchi-lips.jpg").default;
+const graf = require("../../assets/img/merchi-graf.jpg").default;
 
 function About() {
-  const globeEl = useRef();
-  const globeContainer = useRef();
-
-  const [animate, setAnimate] = useState(false);
-  const [routes, setRoutes] = useState([]);
-  const [animating, setAnimating] = useState(true);
-
-  const isInViewport = (el, elAnimate) => {
-    const rect = el.current.getBoundingClientRect();
-    if (rect.top < 2000 && animate === false) {
-      elAnimate.current.pointOfView(MAP_CENTER, 2000);
-      setAnimate(true);
-    }
-  };
-
-  const pauseAnimation = () => {
-    if (animating) {
-      setAnimating(false);
-      globeEl.current.pauseAnimation();
-    }
-    if (!animating) {
-      setAnimating(true);
-      globeEl.current.resumeAnimation();
-    }
-  };
-
-  const setCanvasDimension = () => {
-    const vWidth = Math.max(
-      document.documentElement.clientWidth || 0,
-      window.innerWidth || 0
-    );
-    if (vWidth < 991) {
-      return 1500;
-    } else if (vWidth > 991) {
-      return 2000;
-    }
-  };
-
-  // useLayoutEffect(() => {
-  //   const handleScroll = () => {
-  //     // console.log("rect top", rect.top, "rect bottom", rect.bottom);
-  //     // console.log("window height:", window.innerHeight);
-  //     isInViewport(globeContainer, globeEl);
-  //   };
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () =>
-  //     window.removeEventListener("scroll", handleScroll, { passive: true });
-  // }, [animate]);
-
-  useEffect(() => {
-    // load data
-    Promise.all([
-      fetch(airportData)
-        .then((res) => res.text())
-        .then((d) => d3.csvParseRows(d, airportParse)),
-      fetch(routeData)
-        .then((res) => res.text())
-        .then((d) => d3.csvParseRows(d, routeParse)),
-    ]).then(([airports, routes]) => {
-      const byIata = indexBy(airports, "iata", false);
-      const filteredRoutes = routes
-        .filter(
-          (d) =>
-            byIata.hasOwnProperty(d.srcIata) && byIata.hasOwnProperty(d.dstIata)
-        ) // exclude unknown airports
-        .filter((d) => d.stops === "0") // non-stop flights only
-        .map((d) =>
-          Object.assign(d, {
-            srcAirport: byIata[d.srcIata],
-            dstAirport: byIata[d.dstIata],
-          })
-        )
-        .filter(
-          (d) =>
-            (d.srcAirport.country === "Australia" &&
-              d.dstAirport.country === "United States") ||
-            (d.srcAirport.country === "Australia" &&
-              d.dstAirport.country === "Japan") ||
-            (d.srcAirport.country === "Australia" &&
-              d.dstAirport.country === "China") ||
-            (d.srcAirport.country === "Australia" &&
-              d.dstAirport.country === "Chile")
-        ); // international routes from country
-      setRoutes(filteredRoutes);
-      globeEl.current.controls().enableZoom = false;
-      globeEl.current.pointOfView(MAP_CENTER, 2000);
-      // console.log(globeEl);
-    });
-  }, []);
-
-  const polygonsMaterial = new THREE.MeshStandardMaterial({
-    color: "rgba(48, 61, 191, 1)",
-    metalness: 0.8,
-    roughness: 0.6,
-  });
-  const globeMaterial = new THREE.MeshStandardMaterial({
-    color: "rgba(48, 61, 191, 1)",
-    roughness: 0.55,
-  });
-
   return (
     <>
       <div className="main-content" style={{ overflowX: "hidden" }}>
         <AboutHeader />
         <section className="py-3">
-          <Container>
-            <Row>
-              <Col
-                className="d-flex align-items-center justify-content-center"
-                md="6"
-              >
-                <div style={{ maxWidth: 400 }}>
-                  <h2
-                    style={{ lineHeight: "42px" }}
-                    className="display-3 text-default"
-                  >
-                    Get Started Free.
-                  </h2>
-                  <p style={{ fontSize: 18, maxWidth: 450 }}>
-                    Test the waters. Start selling basic custom merchandise with
-                    absolutely no upfront or ongoing costs.
-                  </p>
-                </div>
-              </Col>
-              <Col
-                md="6"
+          <Container className="position-relative">
+            <div
+              className="look_at_me"
+              style={{
+                background: "#f0f2fd",
+                width: "calc(100% - 150px)",
+                height: "450px",
+                position: "absolute",
+                top: "90px",
+                transform: "translateX(-50%)",
+                left: "50%",
+                borderRadius: "3px",
+              }}
+            >
+              <img
+                src={skateboard}
                 style={{
-                  backgroundImage: `url(${cetraliseImage})`,
-                  backgroundSize: "contain",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center",
-                  minHeight: 600,
+                  maxWidth: "500px",
+                  position: "absolute",
+                  top: "300px",
+                  transform: "translateX(-50%)",
+                  left: "50%",
                 }}
-              ></Col>
-            </Row>
-          </Container>
-        </section>
-        <section className="py-3">
-          <Container>
+                alt="merch skateboard"
+              ></img>
+            </div>
             <Row>
               <Col
-                className="d-flex mt-4 d-md-none align-items-center justify-content-center"
+                className="d-flex align-items-center justify-content-around"
                 md="6"
               >
-                <div style={{ maxWidth: 400 }}>
+                <div style={{ maxWidth: 500 }}>
                   <h2
-                    style={{ lineHeight: "42px", color: "#FFC928" }}
+                    style={{
+                      lineHeight: "60px",
+                      color: "#303dbf",
+                      fontWeight: 700,
+                    }}
                     className="display-3"
                   >
-                    Unique Merch.
+                    Make Merch Easy.
                   </h2>
-                  <p style={{ fontSize: 18, maxWidth: 450 }}>
-                    Not just apparel. Stand out from the crowd with interesting
-                    and unique merchandise. Browse the Merchi marketplace for
-                    exciting products that your audience
+                  <p style={{ fontWeight: 800, fontSize: 16 }}>
+                    It's been over five years since Merchi was first
+                    conceptualised to satisfy the operational needs of our small
+                    merchandising business here in Melbourne, Australia.
+                  </p>
+                  <p style={{ fontSize: 16 }}>
+                    None of the tools we found online had the functionality we
+                    needed to run our merchandise stores online, so we built
+                    something that could. Since Merchi first launched for
+                    general availability, we have onboarded a network of
+                    suppliers and sellers that together create a thriving
+                    merchandise platform.
                   </p>
                 </div>
               </Col>
@@ -274,7 +109,7 @@ function About() {
                 className="d-flex d-md-none"
                 md="6"
                 style={{
-                  backgroundImage: `url(${oportunitiesImage})`,
+                  backgroundImage: `url(${customProducts})`,
                   backgroundSize: "contain",
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
@@ -285,103 +120,18 @@ function About() {
                 className="d-none d-md-flex"
                 md="6"
                 style={{
-                  backgroundImage: `url(${oportunitiesImage})`,
+                  backgroundImage: `url(${customProducts})`,
                   backgroundSize: "contain",
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
-                  minHeight: 500,
-                }}
-              ></Col>
-              <Col
-                className="d-none d-md-flex align-items-center justify-content-center"
-                md="6"
-              >
-                <div style={{ maxWidth: 400 }}>
-                  <h2
-                    style={{ lineHeight: "42px", color: "#FFC928" }}
-                    className="display-3"
-                  >
-                    Unique Merch.
-                  </h2>
-                  <p style={{ fontSize: 18, maxWidth: 450 }}>
-                    Not just apparel. Stand out from the crowd with interesting
-                    and unique merchandise. Browse the Merchi marketplace for
-                    exciting products that your audience
-                  </p>
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </section>
-        <section className="d-none d-md-block pb-3 pt-5">
-          <Container>
-            <Row>
-              <Col
-                className="d-flex align-items-center justify-content-center"
-                md="5"
-              >
-                <div style={{ maxWidth: 400 }}>
-                  <h2
-                    style={{ lineHeight: "42px", color: "#FF4449" }}
-                    className="display-3 "
-                  >
-                    Multiple Stores.
-                  </h2>
-                  <p style={{ fontSize: 18, maxWidth: 450 }}>
-                    Manage as many online stores as you like. Analytics, supply,
-                    logistics, sales and delivery for all stores are centralised
-                    in a single dashboard for easy management.
-                  </p>
-                </div>
-              </Col>
-              <Col
-                md="7"
-                style={{
-                  backgroundImage: `url(${expandImage})`,
-                  backgroundSize: "contain",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center",
-                  minHeight: 350,
+                  minHeight: 375,
                 }}
               ></Col>
             </Row>
           </Container>
         </section>
-        <section className="d-block d-md-none py-3">
-          <Container>
-            <Row>
-              <Col
-                className="d-flex align-items-center justify-content-center mt-4"
-                md="5"
-              >
-                <div style={{ maxWidth: 400 }}>
-                  <h2
-                    style={{ lineHeight: "42px", color: "#FF4449" }}
-                    className="display-3"
-                  >
-                    Multiple Stores.
-                  </h2>
-                  <p style={{ fontSize: 18, maxWidth: 450 }}>
-                    Manage as many online stores as you like. Analytics, supply,
-                    logistics, sales and delivery for all stores are centralised
-                    in a single dashboard for easy management.
-                  </p>
-                </div>
-              </Col>
-              <Col
-                md="7"
-                style={{
-                  backgroundImage: `url(${expandImage})`,
-                  backgroundSize: "contain",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center",
-                  minHeight: 350,
-                }}
-              ></Col>
-            </Row>
-          </Container>
-        </section>
-        <section className="pt-8">
+
+        {/* <section style={{ marginTop: "300px" }} className="pt-8">
           <Container>
             <Row
               style={{
@@ -428,8 +178,8 @@ function About() {
               </Col>
             </Row>
           </Container>
-        </section>
-        <section>
+        </section> */}
+        {/* <section style={{ marginTop: 300 }}>
           <Container>
             <Row>
               <Col
@@ -525,37 +275,6 @@ function About() {
                     build merch value chains with them and generate long lasting
                     reccurring revenue streams.
                   </p>
-                  <Button
-                    className="float-right"
-                    style={{ padding: 0, borderRadius: 100, zIndex: 1 }}
-                    onClick={() => pauseAnimation()}
-                  >
-                    {animating ? (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="40"
-                        height="40"
-                        fill="currentColor"
-                        className="bi bi-pause-circle"
-                        viewBox="0 0 16 16"
-                      >
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M5 6.25a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5zm3.5 0a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5z" />
-                      </svg>
-                    ) : (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="40"
-                        height="40"
-                        fill="currentColor"
-                        class="bi bi-play-circle"
-                        viewBox="0 0 16 16"
-                      >
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z" />
-                      </svg>
-                    )}
-                  </Button>
                 </div>
                 <div
                   className="d-block d-md-none mt-2"
@@ -572,81 +291,12 @@ function About() {
                     merch value chains with them and generate long lasting
                     reccurring revenue streams.
                   </p>
-                  <Button
-                    className="float-right"
-                    style={{ padding: 0, borderRadius: 100, zIndex: 1 }}
-                    onClick={() => pauseAnimation()}
-                  >
-                    {animating ? (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="40"
-                        height="40"
-                        fill="currentColor"
-                        className="bi bi-pause-circle"
-                        viewBox="0 0 16 16"
-                      >
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M5 6.25a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5zm3.5 0a1.25 1.25 0 1 1 2.5 0v3.5a1.25 1.25 0 1 1-2.5 0v-3.5z" />
-                      </svg>
-                    ) : (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="40"
-                        height="40"
-                        fill="currentColor"
-                        class="bi bi-play-circle"
-                        viewBox="0 0 16 16"
-                      >
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z" />
-                      </svg>
-                    )}
-                  </Button>
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                <div
-                  style={{ minHeight: 400 }}
-                  className="globe-container"
-                  ref={globeContainer}
-                >
-                  <Globe
-                    ref={globeEl}
-                    globeMaterial={globeMaterial}
-                    arcsData={routes}
-                    backgroundColor="rgba(248, 249, 254, 0)"
-                    animateIn={true}
-                    showAtmosphere={false}
-                    polygonAltitude={0.005}
-                    polygonsData={landPolygons}
-                    polygonCapMaterial={polygonsMaterial}
-                    arcStartLat={(d) => +d.srcAirport.lat}
-                    arcStartLng={(d) => +d.srcAirport.lng}
-                    arcEndLat={(d) => +d.dstAirport.lat}
-                    arcEndLng={(d) => +d.dstAirport.lng}
-                    arcDashLength={0.25}
-                    arcDashGap={1}
-                    arcDashInitialGap={() => Math.random()}
-                    arcDashAnimateTime={10000}
-                    arcColor={() => [
-                      "rgba(255, 201, 40, 1)",
-                      "rgba(255, 201, 40, 0.5)",
-                    ]}
-                    arcStroke={0.2}
-                    arcsTransitionDuration={1}
-                    polygonSideColor={() => "rgba(0, 0, 0, 1)"}
-                    width={setCanvasDimension()}
-                    height={setCanvasDimension()}
-                  />
                 </div>
               </Col>
             </Row>
           </Container>
-        </section>
-        <section className="py-6">
+        </section> */}
+        <section style={{ marginTop: 300 }}>
           <Container
             fluid
             className="position-relative"
@@ -656,7 +306,7 @@ function About() {
               <Row className="row-grid align-items-center">
                 <Col>
                   <div
-                    className="mt-7 mb-5 text-center"
+                    className="mt-6 mb-5 text-center"
                     style={{ maxWidth: 600, margin: "auto" }}
                   >
                     <h2
@@ -668,7 +318,7 @@ function About() {
                         display: "inline",
                       }}
                     >
-                      Start,{" "}
+                      Merchi{" "}
                       <span
                         style={{
                           color: "rgb(48, 61, 191)",
@@ -677,183 +327,66 @@ function About() {
                           fontWeight: 800,
                         }}
                       >
-                        experiment
-                      </span>{" "}
-                      and{" "}
-                      <span
-                        style={{
-                          color: "rgb(255, 201, 40)",
-                          textShadow: "1px 1px 0px #f8f9fe",
-                          display: "inline",
-                          fontWeight: 800,
-                        }}
-                      >
-                        grow.
+                        mission.
                       </span>
                     </h2>
 
+                    <p
+                      style={{
+                        fontSize: "16px",
+                        textShadow: "1px 1px 0px #f8f9fe",
+                        margin: "auto",
+                        maxWidth: 500,
+                        fontWeight: 800,
+                        lineHeight: "20px",
+                      }}
+                      className="mt-2 text-strong text-left"
+                    >
+                      Make merch easy by connecting suppliers to sellers, and
+                      sellers to their audience.
+                    </p>
                     <p
                       style={{
                         fontSize: "18px",
                         textShadow: "1px 1px 0px #f8f9fe",
                         margin: "auto",
                         maxWidth: 500,
+                        lineHeight: "26px",
                       }}
-                      className="mt-2"
+                      className="mt-3 text-left"
                     >
-                      Open your first merchandise store. Grow your existing
-                      business with powerful tools. Experiment with unique
-                      products only available on Merchi.
+                      We're helping suppliers and sellers meet the full
+                      opportunity available to them in custom merchandise. We
+                      disrupt the current space by building a decentralised
+                      marketplace with both small and large participants.
+                    </p>
+                    <p
+                      style={{
+                        fontSize: "18px",
+                        textShadow: "1px 1px 0px #f8f9fe",
+                        margin: "auto",
+                        maxWidth: 500,
+                        lineHeight: "26px",
+                      }}
+                      className="mt-3 text-left"
+                    >
+                      Merchi makes cooperation between participants of all sizes
+                      possilbe, resulting in the creation of truly unique and
+                      desirable merchandise products.
                     </p>
                   </div>
                 </Col>
               </Row>
               <Row>
-                <Col
-                  className="d-flex align-items-center justify-content-around"
-                  md="5"
-                >
-                  <div style={{ maxWidth: 450 }}>
-                    <h2
-                      style={{
-                        lineHeight: "42px",
-                        color: "rgb(255, 201, 40)",
-                      }}
-                      className="display-4"
-                    >
-                      Made On Demand Products.
-                    </h2>
-                    <p style={{ fontWeight: 800, fontSize: 16 }}>
-                      Add to your store with no investment and sell immediately.
-                    </p>
-                    <p style={{ fontSize: 16 }}>
-                      Products in this category are made and delivered when your
-                      customer buys it. This means that you do not have to order
-                      a minimum quantity or hold any stock. Just add to your
-                      store, sell and keep the profit!
-                    </p>
-                  </div>
+                <Col sm="4">
+                  <img className="w-100" src={lips} alt="merchi-frog" />
                 </Col>
-                <Col
-                  className="d-flex d-md-none"
-                  md="7"
-                  style={{
-                    backgroundImage: `url(${customProducts})`,
-                    backgroundSize: "contain",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                    minHeight: 300,
-                  }}
-                ></Col>
-                <Col
-                  className="d-none d-md-flex"
-                  md="7"
-                  style={{
-                    backgroundImage: `url(${customProducts})`,
-                    backgroundSize: "contain",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                    minHeight: 500,
-                  }}
-                ></Col>
-              </Row>
-              <Row>
-                <Col
-                  className="d-none d-md-flex"
-                  md="7"
-                  style={{
-                    backgroundImage: `url(${logistics})`,
-                    backgroundSize: "contain",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                    minHeight: 500,
-                  }}
-                ></Col>
-                <Col
-                  className="d-flex align-items-center justify-content-around"
-                  md="5"
-                >
-                  <div style={{ maxWidth: 450 }}>
-                    <h2
-                      style={{
-                        lineHeight: "42px",
-                      }}
-                      className="display-4 text-default mt-4 mt-md-0"
-                    >
-                      Minimum Order Products.
-                    </h2>
-                    <p style={{ fontWeight: 800, fontSize: 16 }}>
-                      Highly customisable products requiring a minimum order.
-                    </p>
-                    <p style={{ fontSize: 16 }}>
-                      Products in this category are generally highly
-                      customisable, require an upfront investment in stock, and
-                      some time for design and manufacturing. Great for
-                      experimenting with unique products.
-                    </p>
-                  </div>
+                <Col sm="4">
+                  <img className="w-100" src={frog} alt="merchi-frog" />
                 </Col>
-                <Col
-                  className="d-flex d-md-none"
-                  md="7"
-                  style={{
-                    backgroundImage: `url(${logistics})`,
-                    backgroundSize: "contain",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                    minHeight: 300,
-                  }}
-                ></Col>
-              </Row>
-              <Row>
-                <Col
-                  className="d-flex align-items-center justify-content-around"
-                  md="5"
-                >
-                  <div style={{ maxWidth: 450 }}>
-                    <h2
-                      style={{
-                        lineHeight: "42px",
-                        color: "rgb(255, 68, 73)",
-                      }}
-                      className="display-4 mt-4 mt-md-0"
-                    >
-                      Sell Internationally.
-                    </h2>
-                    <p style={{ fontWeight: 800, fontSize: 16 }}>
-                      Seamlessly integrate fulfillment with Merchi.
-                    </p>
-                    <p style={{ fontSize: 16 }}>
-                      Don't disappoint your international audience! Merchi
-                      integrates with all major fulfillment companies to ensure
-                      that you're able to send merchandise to customers all over
-                      the globe. Track and manage all deliveries from one
-                      easy-to-use dashboard.
-                    </p>
-                  </div>
+                <Col sm="4">
+                  <img className="w-100" src={graf} alt="merchi-frog" />
                 </Col>
-                <Col
-                  md="7"
-                  className="d-none d-md-flex"
-                  style={{
-                    backgroundImage: `url(${scale})`,
-                    backgroundSize: "contain",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                    minHeight: 500,
-                  }}
-                ></Col>
-                <Col
-                  md="7"
-                  className="d-flex d-md-none"
-                  style={{
-                    backgroundImage: `url(${scale})`,
-                    backgroundSize: "contain",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                    minHeight: 300,
-                  }}
-                ></Col>
               </Row>
             </Container>
           </Container>

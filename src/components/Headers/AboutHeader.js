@@ -33,7 +33,7 @@ function AboutHeader() {
                     All-in-one{" "}
                     <span
                       style={{
-                        color: "rgb(255, 201, 40)",
+                        color: "#2f2f2f",
                         textShadow: "1px 1px 0px #f8f9fe",
                       }}
                     >
@@ -42,7 +42,7 @@ function AboutHeader() {
                     <span
                       style={{
                         fontSize: 60,
-                        color: "#2f2f2f",
+                        color: "rgb(48, 61, 191)",
                         fontWeight: 800,
                         lineHeight: "70px",
                         textShadow: "1px 1px 0px #f8f9fe",
