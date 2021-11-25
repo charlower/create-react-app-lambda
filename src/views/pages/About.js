@@ -321,7 +321,7 @@ function About() {
                       Merchi{" "}
                       <span
                         style={{
-                          color: "rgb(48, 61, 191)",
+                          color: "rgb(255, 68, 73)",
                           textShadow: "1px 1px 0px #f8f9fe",
                           display: "inline",
                           fontWeight: 800,
