@@ -226,7 +226,7 @@ function Index() {
               >
                 <div style={{ maxWidth: 400 }}>
                   <h2
-                    style={{ lineHeight: "42px" }}
+                    style={{ lineHeight: "42px", fontWeight: 800 }}
                     className="display-3 text-default"
                   >
                     Centralise Operations.
@@ -257,7 +257,7 @@ function Index() {
                 className="d-flex mt-4 d-md-none align-items-center justify-content-center"
                 md="6"
               >
-                <div style={{ maxWidth: 400 }}>
+                <div style={{ maxWidth: 400, fontWeight: 800 }}>
                   <h2
                     style={{ lineHeight: "42px", color: "#FFC928" }}
                     className="display-3"
@@ -300,7 +300,11 @@ function Index() {
               >
                 <div style={{ maxWidth: 400 }}>
                   <h2
-                    style={{ lineHeight: "42px", color: "#FFC928" }}
+                    style={{
+                      lineHeight: "42px",
+                      color: "#FFC928",
+                      fontWeight: 800,
+                    }}
                     className="display-3"
                   >
                     Expand Online.
@@ -325,7 +329,11 @@ function Index() {
               >
                 <div style={{ maxWidth: 400 }}>
                   <h2
-                    style={{ lineHeight: "42px", color: "#FF4449" }}
+                    style={{
+                      lineHeight: "42px",
+                      color: "#FF4449",
+                      fontWeight: 800,
+                    }}
                     className="display-3 "
                   >
                     Discover New Opportunities.
@@ -359,7 +367,11 @@ function Index() {
               >
                 <div style={{ maxWidth: 400 }}>
                   <h2
-                    style={{ lineHeight: "42px", color: "#FF4449" }}
+                    style={{
+                      lineHeight: "42px",
+                      color: "#FF4449",
+                      fontWeight: 800,
+                    }}
                     className="display-3"
                   >
                     Discover New Opportunities.
@@ -410,7 +422,11 @@ function Index() {
               <Col md="6 pl-md-0 d-flex align-items-center justify-content-center">
                 <div className="pb-5 px-5 pt-0 pl-md-0 pr-md-3 py-md-3">
                   <h2
-                    style={{ lineHeight: "42px", color: "#fff" }}
+                    style={{
+                      lineHeight: "42px",
+                      color: "#fff",
+                      fontWeight: 800,
+                    }}
                     className="display-3"
                   >
                     Merchi Marketplace
@@ -444,7 +460,7 @@ function Index() {
                   style={{ maxWidth: 400, paddingTop: 150, zIndex: 1 }}
                 >
                   <h2
-                    style={{ lineHeight: "42px" }}
+                    style={{ lineHeight: "42px", fontWeight: 800 }}
                     className="display-4 text-default"
                   >
                     Benefit One.
@@ -460,7 +476,7 @@ function Index() {
                   style={{ maxWidth: 400, zIndex: 1 }}
                 >
                   <h2
-                    style={{ lineHeight: "42px" }}
+                    style={{ lineHeight: "42px", fontWeight: 800 }}
                     className="display-4 text-default"
                   >
                     Benefit One.
@@ -481,7 +497,7 @@ function Index() {
                   style={{ maxWidth: 400, zIndex: 1 }}
                 >
                   <h2
-                    style={{ lineHeight: "42px" }}
+                    style={{ lineHeight: "42px", fontWeight: 800 }}
                     className="display-4 text-default"
                   >
                     Feature Two.
@@ -497,7 +513,7 @@ function Index() {
                   style={{ maxWidth: 400, zIndex: 1 }}
                 >
                   <h2
-                    style={{ lineHeight: "42px" }}
+                    style={{ lineHeight: "42px", fontWeight: 800 }}
                     className="display-4 text-default"
                   >
                     Feature Two.
@@ -518,7 +534,7 @@ function Index() {
                   style={{ maxWidth: 400, paddingTop: 150, zIndex: 1 }}
                 >
                   <h2
-                    style={{ lineHeight: "42px" }}
+                    style={{ lineHeight: "42px", fontWeight: 800 }}
                     className="display-4 text-default"
                   >
                     Selling Point.
@@ -719,6 +735,7 @@ function Index() {
                       style={{
                         lineHeight: "42px",
                         color: "rgb(255, 201, 40)",
+                        fontWeight: 800,
                       }}
                       className="display-4"
                     >
@@ -778,6 +795,7 @@ function Index() {
                     <h2
                       style={{
                         lineHeight: "42px",
+                        fontWeight: 800,
                       }}
                       className="display-4 text-default mt-4 mt-md-0"
                     >
@@ -817,6 +835,7 @@ function Index() {
                       style={{
                         lineHeight: "42px",
                         color: "rgb(255, 68, 73)",
+                        fontWeight: 800,
                       }}
                       className="display-4 mt-4 mt-md-0"
                     >
@@ -873,7 +892,11 @@ function Index() {
               <Col md="7 d-flex align-items-center justify-content-center">
                 <div className="p-5 pb-sm-7 pb-md-5 pl-md-5 pr-md-2 pl-lg-7">
                   <h2
-                    style={{ lineHeight: "42px", color: "#303dbf" }}
+                    style={{
+                      lineHeight: "42px",
+                      color: "#303dbf",
+                      fontWeight: 800,
+                    }}
                     className="display-3"
                   >
                     Help at every step.
