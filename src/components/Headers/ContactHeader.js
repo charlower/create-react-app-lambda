@@ -18,7 +18,7 @@ function AboutHeader() {
         >
           <div className="header-body">
             <Row className="align-items-center">
-              <Col lg="6">
+              <Col lg="7">
                 <div className="pr-5">
                   <h1
                     style={{
@@ -35,13 +35,15 @@ function AboutHeader() {
                     style={{
                       fontSize: "18px",
                       textShadow: "1px 1px 0px #f8f9fe",
-                      maxWidth: "450px",
+                      fontWeight: 600,
                     }}
                     className="mt-5"
                   >
-                    Need technical support, or have another enquiry? We're
-                    available online via text and voice chat. Developer docs are
-                    also online! View the Merchi project on Github.
+                    Need technical support, or have another enquiry?
+                  </p>
+                  <p style={{ fontSize: "18px" }}>
+                    We're available online via text and voice chat. Developer
+                    docs are also online! View the Merchi project on Github.
                   </p>
                 </div>
               </Col>
