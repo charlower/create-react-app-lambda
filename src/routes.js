@@ -42,6 +42,7 @@ import Vector from "./views/pages/maps/Vector.js";
 import Widgets from "./views/pages/Widgets.js";
 import Sellers from "./views/pages/Sellers.js";
 import About from "./views/pages/About.js";
+import Contact from "./views/pages/Contact.js";
 
 const routes = [
   {
@@ -312,6 +313,13 @@ const routes = [
     name: "About",
     icon: "ni ni-calendar-grid-58 text-red",
     component: About,
+    layout: "/auth",
+  },
+  {
+    path: "/contact",
+    name: "Contact",
+    icon: "ni ni-calendar-grid-58 text-red",
+    component: Contact,
     layout: "/auth",
   },
 ];

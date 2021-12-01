@@ -83,7 +83,9 @@ function AuthFooter() {
                   </NavLink>
                 </li>
                 <li>Media</li>
-                <li>Contact</li>
+                <NavLink style={{ padding: 0 }} to="/auth/contact" tag={Link}>
+                  <span className="nav-link-inner--text">Contact</span>
+                </NavLink>
               </ul>
             </Col>
             <Col sm="3">

@@ -50,7 +50,6 @@ function About() {
         <section className="py-3">
           <Container className="position-relative">
             <div
-              className="look_at_me"
               style={{
                 background: "#f0f2fd",
                 width: "calc(100% - 150px)",
