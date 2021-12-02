@@ -44,6 +44,7 @@ import Sellers from "./views/pages/Sellers.js";
 import About from "./views/pages/About.js";
 import Contact from "./views/pages/Contact.js";
 import Security from "./views/pages/Security.js";
+import Privacy from "./views/pages/Privacy.js";
 
 const routes = [
   {
@@ -328,6 +329,13 @@ const routes = [
     name: "Security",
     icon: "ni ni-calendar-grid-58 text-red",
     component: Security,
+    layout: "/auth",
+  },
+  {
+    path: "/privacy",
+    name: "Privacy",
+    icon: "ni ni-calendar-grid-58 text-red",
+    component: Privacy,
     layout: "/auth",
   },
 ];

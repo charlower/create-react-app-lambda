@@ -92,7 +92,9 @@ function AuthFooter() {
               <h3>Resources</h3>
               <ul style={{ padding: 0, listStyle: "none" }}>
                 <li>Developer docs</li>
-                <li>Security</li>
+                <NavLink style={{ padding: 0 }} to="/auth/security" tag={Link}>
+                  <span className="nav-link-inner--text">Security</span>
+                </NavLink>
                 <li>Pricing</li>
               </ul>
             </Col>
@@ -100,7 +102,19 @@ function AuthFooter() {
               <h3>Links</h3>
               <ul style={{ padding: 0, listStyle: "none" }}>
                 <li>Login</li>
-                <li>Github</li>
+                <li>
+                  <a
+                    href="https://github.com/merchisdk/sdk"
+                    style={{ padding: 0 }}
+                  >
+                    <span
+                      style={{ color: "#525f7f" }}
+                      className="nav-link-inner--text"
+                    >
+                      Github
+                    </span>
+                  </a>
+                </li>
               </ul>
             </Col>
             <Col sm="3">
@@ -171,9 +185,9 @@ function AuthFooter() {
               className="d-flex justify-content-center justify-content-sm-end"
               sm="6"
             >
-              <a href="/">
+              <NavLink style={{ padding: 0 }} to="/auth/privacy" tag={Link}>
                 <small>Privacy policy</small>
-              </a>
+              </NavLink>
             </Col>
           </Row>
         </Container>
