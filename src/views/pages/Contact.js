@@ -1,50 +1,8 @@
-//Telegram
-//Github
-//Email
+import { Button, Container, Row, Col } from "reactstrap";
 
-/*!
-
-=========================================================
-* Argon Dashboard PRO React - v1.2.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-pro-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-/*eslint-disable*/
-// react library for routing
-import { Link } from "react-router-dom";
-import { useEffect, useState, useRef, useLayoutEffect } from "react";
-// reactstrap components
-import {
-  Badge,
-  Button,
-  Container,
-  Row,
-  Col,
-  UncontrolledTooltip,
-} from "reactstrap";
-
-// core components
 import ContactHeader from "../../components/Headers/ContactHeader.js";
 
-const shoesImage = require("../../assets/img/sneakers.png").default;
-const customProducts =
-  require("../../assets/img/print-embroid-about.png").default;
 const jumper = require("../../assets/img/merchi-jumper.png").default;
-const scale = require("../../assets/img/merchi-scale.png").default;
-const phone = require("../../assets/img/merchi-support.png").default;
-const skateboard = require("../../assets/img/merchi-skateboard.png").default;
-const frog = require("../../assets/img/merchi-frog.jpg").default;
-const lips = require("../../assets/img/merchi-lips.jpg").default;
-const graf = require("../../assets/img/merchi-graf.jpg").default;
 
 function Contact() {
   return (

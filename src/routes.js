@@ -43,6 +43,7 @@ import Widgets from "./views/pages/Widgets.js";
 import Sellers from "./views/pages/Sellers.js";
 import About from "./views/pages/About.js";
 import Contact from "./views/pages/Contact.js";
+import Security from "./views/pages/Security.js";
 
 const routes = [
   {
@@ -320,6 +321,13 @@ const routes = [
     name: "Contact",
     icon: "ni ni-calendar-grid-58 text-red",
     component: Contact,
+    layout: "/auth",
+  },
+  {
+    path: "/security",
+    name: "Security",
+    icon: "ni ni-calendar-grid-58 text-red",
+    component: Security,
     layout: "/auth",
   },
 ];
