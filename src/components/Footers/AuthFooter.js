@@ -91,11 +91,23 @@ function AuthFooter() {
             <Col sm="3">
               <h3>Resources</h3>
               <ul style={{ padding: 0, listStyle: "none" }}>
-                <li>Developer docs</li>
+                <a
+                  href="https://merchisdk.github.io/sdk/"
+                  style={{ padding: 0 }}
+                >
+                  <span
+                    style={{ color: "rgb(82, 95, 127)" }}
+                    lassName="nav-link-inner--text"
+                  >
+                    Developer docs
+                  </span>
+                </a>
                 <NavLink style={{ padding: 0 }} to="/auth/security" tag={Link}>
                   <span className="nav-link-inner--text">Security</span>
                 </NavLink>
-                <li>Pricing</li>
+                <NavLink style={{ padding: 0 }} to="/auth/pricing" tag={Link}>
+                  <span className="nav-link-inner--text">Pricing</span>
+                </NavLink>
               </ul>
             </Col>
             <Col sm="3">
@@ -140,22 +152,41 @@ function AuthFooter() {
                   </NavLink>
                 </li>
                 <li>Media</li>
-                <li>Contact</li>
+                <NavLink style={{ padding: 0 }} to="/auth/contact" tag={Link}>
+                  <span className="nav-link-inner--text">Contact</span>
+                </NavLink>
               </ul>
             </Col>
             <Col className="text-center" sm="3">
               <h3>Resources</h3>
               <ul style={{ padding: 0, listStyle: "none" }}>
-                <li>Developer docs</li>
+                <a
+                  href="https://merchisdk.github.io/sdk/"
+                  style={{ padding: 0, color: "rgb(82, 95, 127)" }}
+                >
+                  <span className="nav-link-inner--text">Developer docs</span>
+                </a>
                 <li>Security</li>
-                <li>Pricing</li>
+                <NavLink style={{ padding: 0 }} to="/auth/pricing" tag={Link}>
+                  <span className="nav-link-inner--text">Pricing</span>
+                </NavLink>
               </ul>
             </Col>
             <Col className="text-center" sm="3">
               <h3>Links</h3>
               <ul style={{ padding: 0, listStyle: "none" }}>
                 <li>Login</li>
-                <li>Github</li>
+                <a
+                  href="https://github.com/merchisdk/sdk"
+                  style={{ padding: 0 }}
+                >
+                  <span
+                    style={{ color: "#525f7f" }}
+                    className="nav-link-inner--text"
+                  >
+                    Github
+                  </span>
+                </a>
               </ul>
             </Col>
             <Col sm="3">

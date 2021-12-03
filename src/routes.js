@@ -28,7 +28,6 @@ import Icons from "./views/pages/components/Icons.js";
 import Lock from "./views/pages/examples/Lock.js";
 import Login from "./views/pages/examples/Login.js";
 import Notifications from "./views/pages/components/Notifications.js";
-import Pricing from "./views/pages/examples/Pricing.js";
 import Profile from "./views/pages/examples/Profile.js";
 import ReactBSTables from "./views/pages/tables/ReactBSTables.js";
 import Register from "./views/pages/examples/Register.js";
@@ -45,6 +44,7 @@ import About from "./views/pages/About.js";
 import Contact from "./views/pages/Contact.js";
 import Security from "./views/pages/Security.js";
 import Privacy from "./views/pages/Privacy.js";
+import Pricing from "./views/pages/Pricing.js";
 
 const routes = [
   {
@@ -75,13 +75,6 @@ const routes = [
     icon: "ni ni-ungroup text-orange",
     state: "examplesCollapse",
     views: [
-      {
-        path: "/pricing",
-        name: "Pricing",
-        miniName: "P",
-        component: Pricing,
-        layout: "/auth",
-      },
       {
         path: "/login",
         name: "Login",
@@ -336,6 +329,12 @@ const routes = [
     name: "Privacy",
     icon: "ni ni-calendar-grid-58 text-red",
     component: Privacy,
+    layout: "/auth",
+  },
+  {
+    path: "/pricing",
+    name: "Pricing",
+    component: Pricing,
     layout: "/auth",
   },
 ];
