@@ -92,7 +92,7 @@ function AdminNavbar() {
             </div>
             <Nav className="mr-auto" navbar>
               <NavItem>
-                <NavLink to="/admin/dashboard" tag={Link}>
+                <NavLink to="/auth/pricing" tag={Link}>
                   <span className="nav-link-inner--text">Pricing</span>
                 </NavLink>
               </NavItem>
