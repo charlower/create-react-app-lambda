@@ -309,7 +309,7 @@ function Pricing() {
             </div>
           </Col>
         </Row>
-        <div className="d-flex justify-content-lg-center px-3 mt-5">
+        <div className="d-flex justify-content-lg-center px-3 mt-7 mb-5">
           <div>
             <div className="p-2 bg-gradient-white shadow rounded-circle">
               <svg
@@ -333,89 +333,239 @@ function Pricing() {
           </Col>
         </div>
         <Row className="row-grid justify-content-center">
-          <Col lg="10">
-            <Table className="table-dark mt-5" responsive>
+          <Col lg="11">
+            <Table className="table mt-5" responsive>
               <thead>
                 <tr>
-                  <th className="px-0 bg-transparent" scope="col">
-                    <span className="text-light font-weight-700">Features</span>
+                  <th className="px-0 bg-transparent border-0" scope="col">
+                    <span className="font-weight-700">Features</span>
                   </th>
-                  <th className="text-center bg-transparent" scope="col">
-                    Bravo Pack
+                  <th
+                    className="text-center bg-transparent border-0"
+                    scope="col"
+                  >
+                    Seller
                   </th>
-                  <th className="text-center bg-transparent" scope="col">
-                    Alpha Pack
+                  <th
+                    className="text-center bg-transparent border-0"
+                    scope="col"
+                  >
+                    Seller Plus
+                  </th>
+                  <th
+                    className="text-center bg-transparent border-0"
+                    scope="col"
+                  >
+                    Enterprise
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className="px-0">IMAP/POP Support</td>
+                  <td className="px-0">Product creation</td>
                   <td className="text-center">
-                    <i className="fas fa-check text-success" />
+                    <i className="fas fa-check text-primary" />
                   </td>
                   <td className="text-center">
-                    <i className="fas fa-check text-success" />
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-0">Email Forwarding</td>
-                  <td className="text-center">
-                    <i className="fas fa-check text-success" />
+                    <i className="fas fa-check text-primary" />
                   </td>
                   <td className="text-center">
-                    <i className="fas fa-check text-success" />
+                    <i className="fas fa-check text-primary" />
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-0">Active Sync</td>
+                  <td className="px-0">API Access</td>
                   <td className="text-center">
-                    <i className="fas fa-check text-success" />
+                    <i className="fas fa-check text-primary" />
                   </td>
                   <td className="text-center">
-                    <i className="fas fa-check text-success" />
-                  </td>
-                </tr>
-                <tr>
-                  <td className="px-0">Multiple domain hosting</td>
-                  <td className="text-center">
-                    <i className="fas fa-check text-success" />
+                    <i className="fas fa-check text-primary" />
                   </td>
                   <td className="text-center">
-                    <span className="text-sm text-light">
-                      Limited to 1 domain only
-                    </span>
+                    <i className="fas fa-check text-primary" />
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-0">Additional storage upgrade</td>
+                  <td className="px-0">Analytics</td>
                   <td className="text-center">
-                    <i className="fas fa-check text-success" />
+                    <i className="fas fa-check text-primary" />
                   </td>
                   <td className="text-center">
-                    <i className="fas fa-check text-success" />
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
                   </td>
                 </tr>
                 <tr>
-                  <td className="px-0">30MB Attachment Limit</td>
+                  <td className="px-0">Invoicing</td>
                   <td className="text-center">
-                    <i className="fas fa-check text-success" />
+                    <i className="fas fa-check text-primary" />
                   </td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-0">Production oversight</td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-0">Remote widgets</td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-0">Merchi plugins</td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-0">Notifications</td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-0">Email notifications</td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-0">Advanced invoicing</td>
                   <td className="text-center">-</td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
                 </tr>
                 <tr>
-                  <td className="px-0">Password protected / Expiry links</td>
-                  <td className="text-center">
-                    <i className="fas fa-check text-success" />
-                  </td>
+                  <td className="px-0">Custom domain name</td>
                   <td className="text-center">-</td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
                 </tr>
                 <tr>
-                  <td className="px-0">Unlimited Custom Apps</td>
-                  <td className="text-center">
-                    <i className="fas fa-check text-success" />
-                  </td>
+                  <td className="px-0">Custom themes</td>
                   <td className="text-center">-</td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-0">Customer drafting</td>
+                  <td className="text-center">-</td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-0">Customer quoting</td>
+                  <td className="text-center">-</td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-0">Tags</td>
+                  <td className="text-center">-</td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-0">Inventory managment</td>
+                  <td className="text-center">-</td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-0">Production managment</td>
+                  <td className="text-center">-</td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-0">SMS Notifications</td>
+                  <td className="text-center">-</td>
+                  <td className="text-center text-primary">
+                    <small>Additional cost</small>
+                  </td>
+                  <td className="text-center text-primary">
+                    <small>Additional cost</small>
+                  </td>
+                </tr>
+                <tr>
+                  <td className="px-0">Multiple domains</td>
+                  <td className="text-center">-</td>
+                  <td className="text-center">-</td>
+                  <td className="text-center">
+                    <i className="fas fa-check text-primary" />
+                  </td>
                 </tr>
               </tbody>
             </Table>
