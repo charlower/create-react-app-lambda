@@ -44,9 +44,8 @@ import AuthFooter from "../../components/Footers/AuthFooter.js";
 const cetraliseImage = require("../../assets/img/girl-2.png").default;
 const oportunitiesImage = require("../../assets/img/girl-1.png").default;
 const expandImage = require("../../assets/img/group-final.png").default;
-const shoesImage = require("../../assets/img/sneakers.png").default;
-const customProducts =
-  require("../../assets/img/merchi-custom-products.png").default;
+const sockImage = require("../../assets/img/merchi-sock.png").default;
+const customProducts = require("../../assets/img/mod-products.png").default;
 const logistics = require("../../assets/img/merchi-logistics.png").default;
 const scale = require("../../assets/img/merchi-scale.png").default;
 const phone = require("../../assets/img/merchi-support.png").default;
@@ -394,10 +393,10 @@ function Sellers() {
               <Col className="position-relative" style={{ height: 400 }} md="6">
                 <img
                   className="position-absolute"
-                  src={shoesImage}
+                  src={sockImage}
                   style={{
                     top: -100,
-                    maxWidth: 350,
+                    maxWidth: 250,
                     left: "calc(50% - 160px)",
                     width: "100%",
                   }}
