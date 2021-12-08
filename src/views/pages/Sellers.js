@@ -46,8 +46,8 @@ const oportunitiesImage = require("../../assets/img/girl-1.png").default;
 const expandImage = require("../../assets/img/group-final.png").default;
 const sockImage = require("../../assets/img/merchi-sock.png").default;
 const customProducts = require("../../assets/img/mod-products.png").default;
-const logistics = require("../../assets/img/merchi-logistics.png").default;
-const scale = require("../../assets/img/merchi-scale.png").default;
+const moqProduct = require("../../assets/img/moq-products.png").default;
+const scale = require("../../assets/img/sell-international.png").default;
 const phone = require("../../assets/img/merchi-support.png").default;
 
 const MAP_CENTER = { lat: -37.8, lng: 145, altitude: 4 };
@@ -224,7 +224,7 @@ function Sellers() {
               >
                 <div style={{ maxWidth: 400 }}>
                   <h2
-                    style={{ lineHeight: "42px" }}
+                    style={{ lineHeight: "42px", fontWeight: 700 }}
                     className="display-3 text-default"
                   >
                     Get Started Free.
@@ -257,7 +257,11 @@ function Sellers() {
               >
                 <div style={{ maxWidth: 400 }}>
                   <h2
-                    style={{ lineHeight: "42px", color: "#FFC928" }}
+                    style={{
+                      lineHeight: "42px",
+                      color: "#FFC928",
+                      fontWeight: 700,
+                    }}
                     className="display-3"
                   >
                     Unique Merch.
@@ -297,7 +301,11 @@ function Sellers() {
               >
                 <div style={{ maxWidth: 400 }}>
                   <h2
-                    style={{ lineHeight: "42px", color: "#FFC928" }}
+                    style={{
+                      lineHeight: "42px",
+                      color: "#FFC928",
+                      fontWeight: 700,
+                    }}
                     className="display-3"
                   >
                     Unique Merch.
@@ -321,7 +329,11 @@ function Sellers() {
               >
                 <div style={{ maxWidth: 400 }}>
                   <h2
-                    style={{ lineHeight: "42px", color: "#FF4449" }}
+                    style={{
+                      lineHeight: "42px",
+                      color: "#FF4449",
+                      fontWeight: 700,
+                    }}
                     className="display-3 "
                   >
                     Multiple Stores.
@@ -355,7 +367,11 @@ function Sellers() {
               >
                 <div style={{ maxWidth: 400 }}>
                   <h2
-                    style={{ lineHeight: "42px", color: "#FF4449" }}
+                    style={{
+                      lineHeight: "42px",
+                      color: "#FF4449",
+                      fontWeight: 700,
+                    }}
                     className="display-3"
                   >
                     Multiple Stores.
@@ -406,7 +422,11 @@ function Sellers() {
               <Col md="6 pl-md-0 d-flex align-items-center justify-content-center">
                 <div className="pb-5 px-5 pt-0 pl-md-0 pr-md-3 py-md-3">
                   <h2
-                    style={{ lineHeight: "42px", color: "#fff" }}
+                    style={{
+                      lineHeight: "42px",
+                      color: "#fff",
+                      fontWeight: 700,
+                    }}
                     className="display-3"
                   >
                     Merchi Marketplace
@@ -440,7 +460,7 @@ function Sellers() {
                   style={{ maxWidth: 400, paddingTop: 150, zIndex: 1 }}
                 >
                   <h2
-                    style={{ lineHeight: "42px" }}
+                    style={{ lineHeight: "42px", fontWeight: 700 }}
                     className="display-4 text-default"
                   >
                     Benefit One.
@@ -456,7 +476,7 @@ function Sellers() {
                   style={{ maxWidth: 400, zIndex: 1 }}
                 >
                   <h2
-                    style={{ lineHeight: "42px" }}
+                    style={{ lineHeight: "42px", fontWeight: 700 }}
                     className="display-4 text-default"
                   >
                     Benefit One.
@@ -477,7 +497,7 @@ function Sellers() {
                   style={{ maxWidth: 400, zIndex: 1 }}
                 >
                   <h2
-                    style={{ lineHeight: "42px" }}
+                    style={{ lineHeight: "42px", fontWeight: 700 }}
                     className="display-4 text-default"
                   >
                     Feature Two.
@@ -493,7 +513,7 @@ function Sellers() {
                   style={{ maxWidth: 400, zIndex: 1 }}
                 >
                   <h2
-                    style={{ lineHeight: "42px" }}
+                    style={{ lineHeight: "42px", fontWeight: 700 }}
                     className="display-4 text-default"
                   >
                     Feature Two.
@@ -514,7 +534,7 @@ function Sellers() {
                   style={{ maxWidth: 400, paddingTop: 150, zIndex: 1 }}
                 >
                   <h2
-                    style={{ lineHeight: "42px" }}
+                    style={{ lineHeight: "42px", fontWeight: 700 }}
                     className="display-4 text-default"
                   >
                     Selling Point.
@@ -561,7 +581,7 @@ function Sellers() {
                   style={{ maxWidth: 400, zIndex: 1 }}
                 >
                   <h2
-                    style={{ lineHeight: "42px" }}
+                    style={{ lineHeight: "42px", fontWeight: 700 }}
                     className="display-4 text-default"
                   >
                     Selling Point.
@@ -717,6 +737,7 @@ function Sellers() {
                       style={{
                         lineHeight: "42px",
                         color: "rgb(255, 201, 40)",
+                        fontWeight: 700,
                       }}
                       className="display-4"
                     >
@@ -761,7 +782,7 @@ function Sellers() {
                   className="d-none d-md-flex"
                   md="7"
                   style={{
-                    backgroundImage: `url(${logistics})`,
+                    backgroundImage: `url(${moqProduct})`,
                     backgroundSize: "contain",
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center",
@@ -776,6 +797,7 @@ function Sellers() {
                     <h2
                       style={{
                         lineHeight: "42px",
+                        fontWeight: 700,
                       }}
                       className="display-4 text-default mt-4 mt-md-0"
                     >
@@ -796,7 +818,7 @@ function Sellers() {
                   className="d-flex d-md-none"
                   md="7"
                   style={{
-                    backgroundImage: `url(${logistics})`,
+                    backgroundImage: `url(${moqProduct})`,
                     backgroundSize: "contain",
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center",
@@ -814,6 +836,7 @@ function Sellers() {
                       style={{
                         lineHeight: "42px",
                         color: "rgb(255, 68, 73)",
+                        fontWeight: 700,
                       }}
                       className="display-4 mt-4 mt-md-0"
                     >
@@ -870,7 +893,11 @@ function Sellers() {
               <Col md="7 d-flex align-items-center justify-content-center">
                 <div className="p-5 pb-sm-7 pb-md-5 pl-md-5 pr-md-2 pl-lg-7">
                   <h2
-                    style={{ lineHeight: "42px", color: "#303dbf" }}
+                    style={{
+                      lineHeight: "42px",
+                      color: "#303dbf",
+                      fontWeight: 700,
+                    }}
                     className="display-3"
                   >
                     Help at every step.
