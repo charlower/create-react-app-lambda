@@ -1,24 +1,4 @@
-/*!
-
-=========================================================
-* Argon Dashboard PRO React - v1.2.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-pro-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-/*eslint-disable*/
-// react library for routing
-import { Link } from "react-router-dom";
 import { useEffect, useState, useRef, useLayoutEffect } from "react";
-// reactstrap components
 import {
   Badge,
   Button,
@@ -42,8 +22,9 @@ import IndexHeader from "../components/Headers/IndexHeader.js";
 import AuthFooter from "../components/Footers/AuthFooter.js";
 
 const cetraliseImage = require("../assets/img/girl-2.png").default;
-const oportunitiesImage = require("../assets/img/girl-1.png").default;
-const expandImage = require("../assets/img/group-final.png").default;
+const oportunitiesImage = require("../assets/img/stickers-cropped.png").default;
+const expandImage =
+  require("../assets/img/discover-new-opportunities.jpg").default;
 const shoesImage = require("../assets/img/sneakers.png").default;
 const customProducts =
   require("../assets/img/merchi-custom-products.png").default;
