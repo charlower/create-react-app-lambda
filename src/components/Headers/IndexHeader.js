@@ -1,26 +1,8 @@
-/*!
-
-=========================================================
-* Argon Dashboard PRO React - v1.2.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-pro-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-// react library for routing
 import { Link } from "react-router-dom";
-// reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
 
 const backgroundImage =
-  require("../../assets/img/stickers-cropped.png").default;
+  require("../../assets/img/supplier-background-image.png").default;
 
 function IndexHeader() {
   return (
@@ -30,8 +12,8 @@ function IndexHeader() {
           className="d-none d-lg-block"
           style={{
             backgroundImage: `url(${backgroundImage})`,
-            backgroundPosition: "right bottom",
-            backgroundSize: "contain",
+            backgroundPosition: "right -65px",
+            backgroundSize: "48%",
             backgroundRepeat: "no-repeat",
           }}
         >
@@ -48,23 +30,23 @@ function IndexHeader() {
                       textShadow: "1px 1px 0px #f8f9fe",
                     }}
                   >
-                    Here is the{" "}
+                    Access the{" "}
                     <span
                       style={{
                         color: "#303DBF",
                         textShadow: "1px 1px 0px #f8f9fe",
                       }}
                     >
-                      main
+                      massive
                     </span>{" "}
-                    selling point for{" "}
+                    custom merch{" "}
                     <span
                       style={{
                         color: "#FF4449",
                         textShadow: "1px 1px 0px #f8f9fe",
                       }}
                     >
-                      suppliers.
+                      market.
                     </span>
                   </h1>
                   <p
@@ -123,23 +105,23 @@ function IndexHeader() {
                       textShadow: "1px 1px 0px #f8f9fe",
                     }}
                   >
-                    Here is the{" "}
+                    Access the{" "}
                     <span
                       style={{
                         color: "#303DBF",
                         textShadow: "1px 1px 0px #f8f9fe",
                       }}
                     >
-                      main
+                      massive
                     </span>{" "}
-                    selling point for{" "}
+                    custom merch{" "}
                     <span
                       style={{
                         color: "#FF4449",
                         textShadow: "1px 1px 0px #f8f9fe",
                       }}
                     >
-                      suppliers.
+                      market.
                     </span>
                   </h1>
                   <p
