@@ -972,7 +972,7 @@ function Index() {
                         />
                       </svg>
                     </span>
-                    <span className="btn-inner--text">Open shop</span>
+                    <span className="btn-inner--text">Sell on Merchi</span>
                   </Button>
                 </div>
                 <div className="text-center">
