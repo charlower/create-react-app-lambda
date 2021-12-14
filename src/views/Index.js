@@ -21,10 +21,9 @@ import IndexNavbar from "../components/Navbars/IndexNavbar.js";
 import IndexHeader from "../components/Headers/IndexHeader.js";
 import AuthFooter from "../components/Footers/AuthFooter.js";
 
-const cetraliseImage = require("../assets/img/girl-2.png").default;
-const oportunitiesImage = require("../assets/img/stickers-cropped.png").default;
-const expandImage =
-  require("../assets/img/discover-new-opportunities.jpg").default;
+const cetraliseImage = require("../assets/img/centralise.jpg").default;
+const oportunitiesImage = require("../assets/img/expand-online.jpg").default;
+const expandImage = require("../assets/img/new-opportunities.jpg").default;
 const shoesImage = require("../assets/img/sneakers.png").default;
 const customProducts =
   require("../assets/img/merchi-custom-products.png").default;
