@@ -293,7 +293,7 @@ function Sellers() {
                   backgroundSize: "contain",
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
-                  minHeight: 500,
+                  minHeight: 400,
                 }}
               ></Col>
               <Col
