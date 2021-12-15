@@ -67,7 +67,7 @@ function IndexHeader() {
                       color="default"
                       href="https://www.creative-tim.com/product/argon-dashboard-pro-react?ref=adpr-auth-navbar"
                     >
-                      Open shop
+                      Sell on Merchi
                     </Button>
                     <Button
                       className="btn-neutral my-2"

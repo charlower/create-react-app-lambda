@@ -41,9 +41,10 @@ import IndexNavbar from "../../components/Navbars/IndexNavbar.js";
 import SellerHeader from "../../components/Headers/SellerHeader.js";
 import AuthFooter from "../../components/Footers/AuthFooter.js";
 
-const cetraliseImage = require("../../assets/img/girl-2.png").default;
-const oportunitiesImage = require("../../assets/img/girl-1.png").default;
-const expandImage = require("../../assets/img/group-final.png").default;
+const getStarted = require("../../assets/img/get-started-merchi.jpg").default;
+const oportunitiesImage =
+  require("../../assets/img/products-merchi.jpg").default;
+const expandImage = require("../../assets/img/multi-store-merchi.jpg").default;
 const sockImage = require("../../assets/img/merchi-sock.png").default;
 const customProducts = require("../../assets/img/mod-products.png").default;
 const moqProduct = require("../../assets/img/moq-products.png").default;
@@ -238,11 +239,11 @@ function Sellers() {
               <Col
                 md="6"
                 style={{
-                  backgroundImage: `url(${cetraliseImage})`,
+                  backgroundImage: `url(${getStarted})`,
                   backgroundSize: "contain",
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
-                  minHeight: 600,
+                  minHeight: 400,
                 }}
               ></Col>
             </Row>
@@ -281,7 +282,7 @@ function Sellers() {
                   backgroundSize: "contain",
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
-                  minHeight: 300,
+                  minHeight: 400,
                 }}
               ></Col>
               <Col
@@ -352,7 +353,7 @@ function Sellers() {
                   backgroundSize: "contain",
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
-                  minHeight: 350,
+                  minHeight: 400,
                 }}
               ></Col>
             </Row>
@@ -390,7 +391,7 @@ function Sellers() {
                   backgroundSize: "contain",
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
-                  minHeight: 350,
+                  minHeight: 400,
                 }}
               ></Col>
             </Row>
@@ -413,7 +414,7 @@ function Sellers() {
                   style={{
                     top: -100,
                     maxWidth: 250,
-                    left: "calc(50% - 160px)",
+                    left: "calc(50% - 125px)",
                     width: "100%",
                   }}
                   alt="Merchi Shoes"
@@ -948,20 +949,19 @@ function Sellers() {
             <Row className="row-grid justify-content-center">
               <Col className="text-center" lg="8">
                 <h2 className="display-3">
-                  Join the first truly open, international marketplace{" "}
+                  Build your store with the the only marketplace{" "}
                   <span
                     className="d-inline"
                     style={{ color: "#ff4449", fontWeight: 800 }}
                   >
                     dedicated{" "}
                   </span>
-                  to merchandise.
+                  to custom merchandise.
                 </h2>
                 <p className="lead">
-                  Quickly and easily give your manufacturing business access to
-                  low barrier custom merchandising - one of the fastest growing
-                  markets online. Merchi's tools make integrating your existing
-                  business simple and low risk.
+                  Start and grow your merchandise business with Merchi. Access
+                  exciting and unique custom products from both local and
+                  international suppliers.
                 </p>
                 <div className="btn-wrapper">
                   <Button
